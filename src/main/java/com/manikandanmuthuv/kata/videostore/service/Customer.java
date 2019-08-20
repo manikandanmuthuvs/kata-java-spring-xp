@@ -15,7 +15,7 @@ public class Customer {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
         Enumeration<Rental> rentals = _rentals.elements();
-        String result = "Rental Record for " + getName() + "\n";
+        String result = "Rental record for " + getName() + "\n";
         while (rentals.hasMoreElements()) {
             double thisAmount = 0;
             Rental each = (Rental) rentals.nextElement();
@@ -30,7 +30,7 @@ public class Customer {
                 case Movie.NEW_RELEASE:
                     thisAmount += each.getDaysRented() * 3;
                     break;
-                case Movie.CHILDRENS:
+                case Movie.CHILDREN:
                     thisAmount += 1.5;
                     if (each.getDaysRented() > 3)
                         thisAmount += (each.getDaysRented() - 3) * 1.5;
