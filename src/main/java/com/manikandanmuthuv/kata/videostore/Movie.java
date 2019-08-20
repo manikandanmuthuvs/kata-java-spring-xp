@@ -1,4 +1,4 @@
-package com.manikandanmuthuv.kata.videostore.service;
+package com.manikandanmuthuv.kata.videostore;
 
 public class Movie {
     public static final int CHILDREN = 2;

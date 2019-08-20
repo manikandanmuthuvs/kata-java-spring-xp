@@ -1,4 +1,4 @@
-package com.manikandanmuthuv.kata.videostore.service;
+package com.manikandanmuthuv.kata.videostore;
 
 import java.util.Enumeration;
 import java.util.Vector;

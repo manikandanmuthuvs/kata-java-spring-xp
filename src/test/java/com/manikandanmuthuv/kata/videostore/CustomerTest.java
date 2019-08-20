@@ -9,9 +9,9 @@ import static org.junit.Assert.assertEquals;
 // import com.manikandanmuthuv.kata.refactoredvideostore.Movie;
 // import com.manikandanmuthuv.kata.refactoredvideostore.Rental;
 
-import com.manikandanmuthuv.kata.videostore.service.Customer;
-import com.manikandanmuthuv.kata.videostore.service.Movie;
-import com.manikandanmuthuv.kata.videostore.service.Rental;
+import com.manikandanmuthuv.kata.videostore.Customer;
+import com.manikandanmuthuv.kata.videostore.Movie;
+import com.manikandanmuthuv.kata.videostore.Rental;
 
 public class CustomerTest {
 
