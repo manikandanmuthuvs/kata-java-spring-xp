@@ -8,6 +8,7 @@ import cucumber.api.java.en.When;
 public class RentalMovieStepDefs {
     @Given("^the new movies are available$")
     public void the_new_movies_are_available() throws Exception {
+        // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
 
