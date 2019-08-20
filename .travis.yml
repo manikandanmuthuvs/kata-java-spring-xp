@@ -1,10 +1,10 @@
 language: java
 before_install:
-- chmod +x mvnw
+  - chmod +x mvnw
 deploy:
   provider: heroku
   api_key:
-    secure: g06dgeiPVFrbd+6Kt/8xHraHG8C9zP2hEO+tuegRgWdVI7KHygC56ubjZeoSR7lTroVfNdUzaqjW0uVFELjE+S6inq/hTW54HnnCZhFqeBXHtuSdDimhZTX8WcneKoiDATuiNt4JMvqmp2zrYRiQ24DDncRbMVtuKTDJiUqPbKrximT3+jRbIWPzMJNB53jayGo0az2D63jrProucNxO2Sb1nEHlvwXK8j8OnLlhRtH8wH9q9F1CSwuv9JYl+sbU+KVRJwbG9Tpf8aWxAllEAnRz3+HJYxh9vMNuh0ixFIQGowu4fz6JCkcpvsCVW/czcIQSP7vtlla9mP9Mqtd+PyxemTkkdsG0wuCVx6V7lWQwYnJuuUsGITg4QT/r+Kqhf/81utD+bTuy02tYFCqbb3EWNKKag9o5R4c+BtsLLe6QtozD2NHq+oan1H8RmFD2gWgug+ZEEg7QilITIgIhXqfoQcp2gkPejD42n1lporhtZ3lFgLQHHLF9aDgT9bl+/Ahy9954fkB1XyNIwPfutQnX8gQHhtlbMMteHt0/XhWy+CKUZ/SxvTFY9Awf2niqoEgcgYiSzLi9tT4YQE+KJ7T4KgsMI/0OBvyHyShRddF7+sA/bMuR35D1BOw+QeJb/Ri9ncZyN4gIPMlMVcHrYgaaEdfoGSi+NajrfnytHRM=
+    secure: 6b259f37-0c5d-4630-9da4-e257c586d0eb
   app: kata-java-spring-xp
   on:
     repo: manikandanmuthuvs/kata-java-spring-xp
