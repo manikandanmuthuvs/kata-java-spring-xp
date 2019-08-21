@@ -13,8 +13,8 @@ public class MovieService {
     private Map<String, Movie> movies = new HashMap<String, Movie>();
 
     public Movie create(Movie movie) {
-        //Movie movie = Movie.builder().id(UUID.randomUUID()).title(title).category(category).build();
         movies.put(movie.getId().toString(), movie);
         return movie;
     }
+  
 }

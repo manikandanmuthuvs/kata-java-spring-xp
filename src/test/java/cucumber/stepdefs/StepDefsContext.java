@@ -15,43 +15,35 @@ public enum StepDefsContext {
     private final ThreadLocal<Map<String, Object>> thenObjects = ThreadLocal.withInitial(HashMap::new);
 
     public <T> T givenObject(Class<T> clazz) {
-        return clazz.cast(givenObjects.get()
-                .get(clazz.getName()));
+        return clazz.cast(givenObjects.get().get(clazz.getName()));
     }
 
     public <T> void givenObject(T object) {
-        givenObjects.get()
-                .put(object.getClass().getName(), object);
+        givenObjects.get().put(object.getClass().getName(), object);
     }
 
     public <T> T result(Class<T> clazz) {
-        return clazz.cast(thenObjects.get()
-                .get(clazz.getName()));
+        return clazz.cast(thenObjects.get().get(clazz.getName()));
     }
 
     public <T> void result(T object) {
-        thenObjects.get()
-                .put(object.getClass().getName(), object);
+        thenObjects.get().put(object.getClass().getName(), object);
     }
 
     public Throwable throwable() {
-        return Throwable.class.cast(thenObjects.get()
-                .get(Throwable.class.getName()));
+        return Throwable.class.cast(thenObjects.get().get(Throwable.class.getName()));
     }
 
     public void throwable(Throwable throwable) {
-        thenObjects.get()
-                .put(Throwable.class.getName(), throwable);
+        thenObjects.get().put(Throwable.class.getName(), throwable);
     }
 
     public Response response() {
-        return Response.class.cast(thenObjects.get()
-                .get(Response.class.getName()));
+        return Response.class.cast(thenObjects.get().get(Response.class.getName()));
     }
 
     public void response(Response throwable) {
-        thenObjects.get()
-                .put(Response.class.getName(), throwable);
+        thenObjects.get().put(Response.class.getName(), throwable);
     }
 
     public void reset() {

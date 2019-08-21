@@ -18,6 +18,7 @@ public class MovieController {
     @ResponseStatus(HttpStatus.CREATED)
     public Movie create(@RequestBody Movie movie) {
         return movieService.create(movie);
-    } 
-
+    }
+    
+   
 }

@@ -14,5 +14,6 @@ import lombok.NoArgsConstructor;
 public class Movie {
     private UUID id;
     private String title;
-    private String category;    
+    private String category;
+    private String genere;    
 }
