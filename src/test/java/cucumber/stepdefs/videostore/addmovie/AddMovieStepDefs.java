@@ -26,20 +26,12 @@ public class AddMovieStepDefs {
 
     StepDefsContext context = StepDefsContext.CONTEXT;
 
-    @When("^User request to add movie \"([^\"]*)\" of genre \"([^\"]*)\" in video store$")
-    public void user_request_to_add_movie_of_genre_in_video_store(String movieName, String genre) throws Exception {
-
+    @When("^User request to add a movie in video store$")
+    public void user_request_to_add_a_movie_in_video_store() throws Exception {
         String url = baseUrl + port + "/api/v1/movie";
 
         JSONObject jsonRequest = (JSONObject) new JSONParser()
-                .parse(new FileReader("src/test/java/cucumber/stepdefs/videostore/addmovie/request.json"));
-        // JSONObject movieDetails = new JSONObject();
-        // movieDetails.put("id", UUID.randomUUID().toString());
-        // movieDetails.put("title", movieName);
-        // movieDetails.put("genre", genre);
-        // JSONObject movieObject = new JSONObject();
-        // movieObject.put("movie", movieDetails);
-        // movieObjectAsString = movieDetails.toString();
+                .parse(new FileReader("src/test/java/cucumber/stepdefs/videostore/addmovie/request.to.addmovie.json"));
 
         Response response = given().log().all().contentType("application/json").body(jsonRequest.toString()).when()
                 .post(url).andReturn();
@@ -48,17 +40,17 @@ public class AddMovieStepDefs {
         context.response(response);
     }
 
-    @Then("^the movie should be added in video store$")
-    public void the_movie_should_be_added_in_video_store() throws Exception {
-        ObjectMapper mapper = new ObjectMapper();
+    @Then("^the movie should be added$")
+    public void the_movie_should_be_added() throws Exception {
+        //ObjectMapper mapper = new ObjectMapper();
         Response response = context.response();
         String actualResponse = response.body().asString();
         assertEquals(response.getStatusCode(), 200);
-    
-        JSONObject expectedResponse = (JSONObject) new JSONParser().parse(new FileReader("src/test/java/cucumber/stepdefs/videostore/addmovie/response.json"));
-        //assertEquals(mapper.readTree(expectedResponse.toString()), mapper.readTree(actualResponse));
-    //    assertJsonEquals(expectedResponse.toString(), actualResponse);
-        assertThatJson(expectedResponse.toString()).whenIgnoringPaths("id")
-        .isEqualTo(actualResponse);
-    }
+
+        JSONObject expectedResponse = (JSONObject) new JSONParser()
+                .parse(new FileReader("src/test/java/cucumber/stepdefs/videostore/addmovie/response.from.addmovie.json"));
+        // assertEquals(mapper.readTree(expectedResponse.toString()),
+        // mapper.readTree(actualResponse));
+        assertThatJson(expectedResponse.toString()).whenIgnoringPaths("id").isEqualTo(actualResponse);
+    }   
 }

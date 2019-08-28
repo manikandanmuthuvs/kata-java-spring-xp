@@ -15,8 +15,13 @@ public class MovieServiceImpl implements MovieServiceInterface {
     public Movie AddMovie(Movie movie) {
         Movie addMovie = Movie.builder().id(UUID.randomUUID().toString()).title(movie.getTitle())
                 .genre(movie.getGenre()).build();
-        movies.put(movie.getId(), addMovie);
+        movies.put(movie.getTitle(), addMovie);
         return addMovie;
+    }
+
+    @Override
+    public Movie SearchMovie(String byTitle) {
+        return movies.get(byTitle);
     }
 
 }
