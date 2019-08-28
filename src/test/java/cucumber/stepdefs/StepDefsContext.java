@@ -6,6 +6,8 @@ import lombok.Getter;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.http.ResponseEntity;
+
 @Getter
 public enum StepDefsContext {
 
@@ -45,7 +47,9 @@ public enum StepDefsContext {
     public void response(Response throwable) {
         thenObjects.get().put(Response.class.getName(), throwable);
     }
-
+    public void response(ResponseEntity<String> response) {
+        thenObjects.get().put(ResponseEntity.class.getName(), response);
+    }
     public void reset() {
         givenObjects.get()
                 .clear();
