@@ -24,4 +24,9 @@ public class MovieServiceImpl implements MovieServiceInterface {
         return movies.get(byTitle);
     }
 
+    @Override
+    public Movie DeleteMovie(String byTitle) {
+        return movies.remove(byTitle);
+    }
+
 }

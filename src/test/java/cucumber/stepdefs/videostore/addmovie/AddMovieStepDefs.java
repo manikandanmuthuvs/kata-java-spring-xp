@@ -1,8 +1,6 @@
 package cucumber.stepdefs.videostore.addmovie;
 
 import java.io.FileReader;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import org.springframework.boot.web.server.LocalServerPort;
 
 import cucumber.api.java.en.Then;
@@ -13,8 +11,6 @@ import static org.junit.Assert.assertEquals;
 import io.restassured.response.Response;
 import net.minidev.json.JSONObject;
 import net.minidev.json.parser.JSONParser;
-import static net.javacrumbs.jsonunit.JsonAssert.*;
-import static net.javacrumbs.jsonunit.core.Option.*;
 import static net.javacrumbs.jsonunit.fluent.JsonFluentAssert.assertThatJson;
 
 public class AddMovieStepDefs {
