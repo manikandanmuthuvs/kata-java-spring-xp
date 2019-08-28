@@ -9,7 +9,7 @@ import com.manikandanmuthuv.kata.videostore.model.Movie;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MovieServiceImpl implements MovieServiceInterface {
+public class MovieService implements MovieServiceInterface {
     Map<String, Movie> movies = new HashMap<>();
 
     public Movie AddMovie(Movie movie) {
@@ -28,5 +28,4 @@ public class MovieServiceImpl implements MovieServiceInterface {
     public Movie DeleteMovie(String byTitle) {
         return movies.remove(byTitle);
     }
-
 }

@@ -1,7 +1,7 @@
 package com.manikandanmuthuv.kata.videostore.controller;
 
 import com.manikandanmuthuv.kata.videostore.model.Movie;
-import com.manikandanmuthuv.kata.videostore.service.MovieServiceImpl;
+import com.manikandanmuthuv.kata.videostore.service.MovieService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MovieController {
 
     @Autowired
-    private MovieServiceImpl movieService;
+    private MovieService movieService;
 
     @PostMapping("")
     @ResponseBody
